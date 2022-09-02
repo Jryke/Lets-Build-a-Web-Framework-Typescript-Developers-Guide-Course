@@ -143,6 +143,11 @@ var User = /*#__PURE__*/function () {
     value: function get(propName) {
       return this.data[propName];
     }
+  }, {
+    key: "set",
+    value: function set(update) {
+      Object.assign(this.data, update);
+    }
   }]);
 
   return User;
@@ -161,6 +166,9 @@ var User_1 = require("./models/User");
 var user = new User_1.User({
   name: "myname",
   age: 20
+});
+user.set({
+  name: "newname"
 });
 console.log(user.get("name"));
 console.log(user.get("age"));
